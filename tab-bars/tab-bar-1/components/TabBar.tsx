@@ -104,7 +104,7 @@ const TabBar: React.FC<ITabBar> = () => {
 
         <AnimatedSvg
           width={width * 7}
-          {...{ height }}
+          height={ height * 5 }
           style={[styles.tab, animatedStyles.animatedI]}
         >
         <Path {...{ d }} fill="white" />

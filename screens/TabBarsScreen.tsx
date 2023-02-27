@@ -16,6 +16,10 @@ const screens:Screen[] = [
     screenRoute: "TabBar2",
     screenText: "Tab Bar Animation 2",
   },
+  {
+    screenRoute: "TabBar3",
+    screenText: "Tab Bar Animation 3",
+  },
 ];
 
 const NavItem = ({handlePress,routeGiven,routeText}) => {

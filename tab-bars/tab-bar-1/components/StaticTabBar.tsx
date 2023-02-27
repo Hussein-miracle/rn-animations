@@ -22,7 +22,7 @@ const width = Dimensions.get("window").width;
 
 interface IStaticTabBar {
   tabs: Tab[];
-  value: number;
+  value: Animated.SharedValue<number>;
   setValue: Function;
 }
 

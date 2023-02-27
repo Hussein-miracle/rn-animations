@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import TabBarsScreen from '../screens/TabBarsScreen';
 import TabBar1Screen from "../tab-bars/tab-bar-1/TabBar1Screen";
 import TabBar2Screen from "../tab-bars/tab-bar-2/TabBar2Screen";
+import TabBar3Screen from '../tab-bars/tab-bar-3/TabBar3Screen';
 
 
 
@@ -37,6 +38,7 @@ const AppNavigator = () => {
         <Stack.Screen name='TabBars' component={TabBarsScreen}/>
         <Stack.Screen name='TabBar1' component={TabBar1Screen}/>
         <Stack.Screen name='TabBar2' component={TabBar2Screen}/>
+        <Stack.Screen name='TabBar3' component={TabBar3Screen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
