@@ -72,9 +72,29 @@ const right = shape
   [0, 0],
 ]);
 
+const center = shape
+  .line()
+  .x((d) => d[0])
+  .y((d) => d[1])
+  .curve(shape.curveBasis)([
+  [width + tabWidth, 0],
+  [width + tabWidth - 5, 0],
+  [width + tabWidth - 10, 10],
+
+  // [width + tabWidth - 12.5, height - 10],
+  [width + tabWidth - 15, height],
+  [width + 15, height],
+  // [width + 12.5, height - 10],
+
+  [width + 10, 10],
+  [width + 5, 0],
+  [width, 0],
+]);
+
 const d = `${left} ${tab} ${right}`;
 
-// console.log(d,'d');
+const revD = `${right} ${center} ${left}`;
+console.log(revD, "revD");
 
 interface ITabBar {}
 
@@ -83,40 +103,37 @@ const TabBar: React.FC<ITabBar> = () => {
   const animatedStyles = {
     animatedI: useAnimatedStyle(() => {
       return {
-        transform: [{ translateX: X.value}],
+        transform: [{ translateX: X.value }],
       };
-    })
+    }),
   };
 
-  const setValue  = (num:number) => {
+  const setValue = (num: number) => {
     X.value = withSpring(num);
-  }
+  };
 
   return (
-    <View style={{
-      position:'absolute',
-      bottom:0,
-      left:0
-    }}>
+    <View
+      style={{
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+      }}
+    >
       <View {...{ height, width }}>
-
-
-
         <AnimatedSvg
           width={width * 7}
-          height={ height * 5 }
+          height={height * 5}
           style={[styles.tab, animatedStyles.animatedI]}
         >
-        <Path {...{ d }} fill="white" />
-      </AnimatedSvg>
+          <Path {...{ d }} fill="white" />
+        </AnimatedSvg>
 
-      <View style={StyleSheet.absoluteFill}>
-        <StaticTabBar tabs={tabs} value={X.value} setValue={setValue} />
+        <View style={StyleSheet.absoluteFill}>
+          <StaticTabBar tabs={tabs} value={X.value} setValue={setValue} />
+        </View>
       </View>
-
-
-    </View>
-    <SafeAreaView style={styles.SA} />
+      <SafeAreaView style={styles.SA} />
     </View>
   );
 };

@@ -93,6 +93,7 @@ const StaticTabBar = ({estyle,mainStyle}) => {
       {TABS.map(({ IconComponent, iconName , size,color ,bgColor}, index) => {
         const stylesNew = [{
           backgroundColor:bgColor,
+          color:color,
         } ];
 
         if(index + 1 !== 3){
@@ -119,6 +120,7 @@ const styles = StyleSheet.create({
     width,
     // backgroundColor: "blue",
     height: TAB_HEIGHT,
+    zIndex: 55,
   },
   tab: {
     justifyContent: "center",

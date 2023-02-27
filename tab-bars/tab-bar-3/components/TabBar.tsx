@@ -22,10 +22,12 @@ const TabBar = ({ estyle ,mainStyle}) => {
     <Animated.View
       style={[{
           position: "absolute",
-          bottom: 0,
-          // left:0
           // backgroundColor: "green",
           width,
+          zIndex: 550,
+          // ...StyleSheet.absoluteFillObject,
+          bottom: 0,
+          left:0,
         }
       ]}
     >
@@ -43,6 +45,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     // position:'absolute',
     // bottom:0,
+    zIndex: 350,
   },
   SA: {},
 });
